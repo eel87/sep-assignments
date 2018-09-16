@@ -1,0 +1,14 @@
+How does your data structure allow developers to access and manipulate the data?
+  The Line class allows developers to access an array of members representing a line at an amusement park.  The Line class has 6 functions, and 1 private function.  The functions allow a developer to add a member to the array, search for a member in the array, see who is the first, middle, or last person in the array, and they can remove any member from the array.  The private function "index" allows developers to determine at what index any one person is located in the member array.
+  
+  
+If a developer wanted to find a specific element in your data structure, how would you search for it?
+  A developer could find a specific element in the Line class data structure by utilizing the private index function on the member array.
+
+
+What other real-world data can each structure represent?
+  The Line class could be used to represent any array of names where order is important.
+  Examples:
+    -A virtual line to buy Hamilton tickets.
+    -A technical support queue.
+    -Keeping track of restaurant delivery and pickup orders.
