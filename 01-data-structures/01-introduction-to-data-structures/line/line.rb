@@ -9,26 +9,38 @@ class Line
   end
 
   def join(person)
+    members.push(person)
   end
 
   def leave(person)
+		members.delete(person)
   end
 
   def front
+		return members.first
   end
 
   def middle
+		middle = ((members.length-1)/2).floor
+		return members[middle]
   end
 
   def back
+		return members.last
   end
 
   def search(person)
+		if members.include?(person) === true
+			return "#{person} is in position ##{members.index(person)} in line."
+		else
+				return "That person is not in line!"
+		end
   end
 
   private
 
   def index(person)
+		return members.index(person)
   end
 
 end
