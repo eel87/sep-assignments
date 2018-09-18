@@ -1,0 +1,15 @@
+How does your data structure allow developers to access and manipulate the data?
+  The Pixel and Screen class data structures allow developers to insert and retrieve objects from a 2D matrix of a set size.
+
+If a developer wanted to find a specific element in your data structure, how would you search for it?
+  The developer could use the "at" method within the Screen class to retrieve the object at the specified (x,y) matrix location.
+
+What other real-world data can each structure represent?
+  The Pixel class could represent any object with rgb color values and (x, y) coordinates:
+    - a chess piece on a game board
+    - a character in a maze game
+    - a location on a map
+  The Screen class could represent any sort of grid:
+    - a chess board or maze
+    - interactive graph
+    - map
