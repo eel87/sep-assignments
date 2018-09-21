@@ -21,7 +21,7 @@ class Screen
 
 private
   def inbounds(x, y)
-    return nil if x < 0 || y < 0
+    return nil if x < 0 || y < 0 || x > @width || y > @height
     @matrix[x][y]
   end
   
