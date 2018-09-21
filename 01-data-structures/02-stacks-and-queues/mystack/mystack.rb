@@ -13,8 +13,8 @@ class MyStack
 	end
 
   def pop
-		item = @stack.last
-	  @stack.delete(item)
+    item = @stack.last
+		@stack.delete(item)
 		self.top = @stack.last
 		return item
 	end
