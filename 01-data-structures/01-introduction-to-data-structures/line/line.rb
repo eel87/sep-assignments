@@ -21,7 +21,7 @@ class Line
   end
 
   def middle
-		middle = ((members.length-1)/2).floor
+		middle = (members.length/2)
 		return members[middle]
   end
 
@@ -31,9 +31,9 @@ class Line
 
   def search(person)
 		if members.include?(person) === true
-			return "#{person} is in position ##{members.index(person)} in line."
+			return person
 		else
-				return "That person is not in line!"
+				return nil
 		end
   end
 
