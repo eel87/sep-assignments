@@ -4,30 +4,24 @@ What is Spatial Locality and why does it benefit performance?
 
 Compare the time it takes to create a 10,000 item Array to appending 10,000 items to a Linked List.
 
-array
-  0.000244   0.000005   0.000249 (  0.000411)
-list
-  0.000047   0.000001   0.000048 (  0.000047)
+  array:        0.000000   0.010000   0.010000 (  0.000601)
+  linked list:  1.280000   0.000000   1.280000 (  1.280235)
 
-*Creating a linked list is faster than creating an array.
+*Creating an array is faster than creating a linked list.
 
 
 Compare the time it takes to access the 5000th element of the Array and the 5000th Node in the Linked List.
 
-array
-  0.000040   0.000001   0.000041 (  0.000040)
-list
-  0.000537   0.000011   0.000548 (  0.000581)
+  array:       0.000000   0.000000   0.000000 (  0.000008)
+  linked list: 0.000000   0.000000   0.000000 (  0.000269)
   
 *It is faster to find the 5000th element in an array than in a linked list.
 
 
-Compare the time it takes to remove the 5000th element from the Array to removing the 5000th Node in the Linked List.
-In the Array, the 5001st item becomes the 5000th, and so on.
+Compare the time it takes to remove the 5000th element from the Array to removing the 5000th Node in the Linked List. In the Array, the 5001st item becomes the 5000th, and so on.
 
-array
-  0.000044   0.000001   0.000045 (  0.000043)
-list
-  0.001397   0.000000   0.001397 (  0.001401)
+  array:       0.000000   0.000000   0.000000 (  0.000020)
+  linked list: 0.000000   0.000000   0.000000 (  0.001075)
   
 *It is faster to delete the 5000th item in an array than in a linked list.
+
