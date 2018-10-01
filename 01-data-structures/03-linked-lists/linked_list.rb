@@ -65,4 +65,5 @@ class LinkedList
     @head = @head.next
     return temp
   end
+  
 end
