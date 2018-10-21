@@ -6,26 +6,22 @@ class HashClass
 		@items.map! { |item| item = HashItem.new(@key, @value) }		
   end
 
- def []=(key, value)
+	def []=(key, value)
 		index = index(key, size)
-		@items[index].key = key
-		@items[index].value = value
-		key = value
-  	# if @items[index].eql?(nil)
-  	#   @items[index] = @items[index[1]]
-		# elsif @items[index].eql?(@items[index[1]])
-		# 	return @items[index[1]]
-  	# else
-  	# 	resize 
-  	# 	# @items.each_with_index do |item, index|
-				
-		# 	# end
-		# end
- end
-
+		if @items[index].key.eql?(nil)
+			@items[index].key = key
+			@items[index].value = value
+			key = value
+		elsif @items[index].value == value
+			return @items[index].value
+		elsif @items[index].key == key && @items[index].value != value
+			resize
+		end
+	end
+	
   def [](key)
 		index =  index(key, @items.length)
-		return @items[index]
+		return @items[index].value
   end
 
 
@@ -36,12 +32,26 @@ class HashClass
 
   def index(key, size)
     index = key.sum % size
+    return index
   end
   
-  def resize
+	def resize
 		s = @items.length
 		newItems = Array.new((s*2) - s)
 		newItems.map! { |item| item = HashItem.new(@key, @value) }
 		@items += newItems
+
+		@items.each_with_index do |item, index|
+			key = item.key
+			value = item.value
+			next if key == nil
+			# puts "index is #{index}, key is #{key}, value is #{value}"
+			index = index(key, @items.length)
+			# puts "new indexis #{index}, key is #{key}, value is #{value}"
+			@items[index].key = item.key
+			@items[index].value = item.value
+			key = item.key
+			value = item.value
+		end
 	end
 end
