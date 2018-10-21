@@ -8,14 +8,14 @@ class HashClass
 
 	def []=(key, value)
 		index = index(key, size)
-		if @items[index].key.eql?(nil)
-			@items[index].key = key
-			@items[index].value = value
-			key = value
-		elsif @items[index].value == value
+		if @items[index].value == value
 			return @items[index].value
 		elsif @items[index].key == key && @items[index].value != value
 			resize
+		else
+			@items[index].key = key
+			@items[index].value = value
+			key = value
 		end
 	end
 	
