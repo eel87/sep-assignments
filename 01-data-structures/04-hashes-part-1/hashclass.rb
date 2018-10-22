@@ -1,57 +1,52 @@
 class HashClass
-	attr_accessor :items
 
   def initialize(size)
     @items = Array.new(size)
-		@items.map! { |item| item = HashItem.new(@key, @value) }		
   end
 
 	def []=(key, value)
-		index = index(key, size)
-		if @items[index].value == value
-			return @items[index].value
-		elsif @items[index].key == key && @items[index].value != value
-			resize
+		i = index(key, size)
+		if @items[i] == nil
+			@items[i] = HashItem.new(key, value)
+		elsif @items[i].key == key
+			@items[i].value = value
 		else
-			@items[index].key = key
-			@items[index].value = value
-			key = value
-		end
+			resize
+			@items << HashItem.new(key, value)
+			if @items[i] == nil
+				@items[i] = HashItem.new(key, value)
+			elsif @items[i].key == key
+				@items[i].value = value
+			else
+				resize
+			end
+		end	
 	end
-	
+
   def [](key)
-		index =  index(key, @items.length)
-		return @items[index].value
+		i = index(key, size)
+		return @items[i].value
   end
 
-
-  # Simple method to return the number of items in the hash
-  def size
-		return @items.count
-  end
-
-  def index(key, size)
-    index = key.sum % size
-    return index
-  end
-  
 	def resize
-		s = @items.length
-		newItems = Array.new((s*2) - s)
-		newItems.map! { |item| item = HashItem.new(@key, @value) }
-		@items += newItems
+		size = (@items.length*2)
+		newItems = Array.new(size)
 
 		@items.each_with_index do |item, index|
-			key = item.key
-			value = item.value
-			next if key == nil
-			# puts "index is #{index}, key is #{key}, value is #{value}"
-			index = index(key, @items.length)
-			# puts "new indexis #{index}, key is #{key}, value is #{value}"
-			@items[index].key = item.key
-			@items[index].value = item.value
-			key = item.key
-			value = item.value
+			next if item == nil
+			newIndex = index(item.key, size)
+			newItems[newIndex] = item
 		end
+		
+		@items.replace(newItems)
 	end
+
+  def index(key, size)
+		index = key.sum % size
+    return index
+  end
+
+  def size
+		@items.count
+  end
 end
