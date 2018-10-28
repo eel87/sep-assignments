@@ -13,14 +13,15 @@ class HashClass
 			@items[i].value = value
 		else
 			resize
-			@items << HashItem.new(key, value)
-				
+			i = index(key, size)
+			while @items[i] != nil && @items[i].key != key
+				resize
+				i = index(key, size)
+			end
 				if @items[i] == nil
 					@items[i] = HashItem.new(key, value)
 				elsif @items[i].key == key
-					@items[i].value = value
-				else
-					resize
+				@items[i].value = value
 				end
 		end	
 	end
@@ -39,8 +40,7 @@ class HashClass
 			newIndex = index(item.key, size)
 			newItems[newIndex] = item
 		end
-		
-		@items.replace(newItems)
+	  @items.replace(newItems)
 	end
 	
 	def index(key, size)
