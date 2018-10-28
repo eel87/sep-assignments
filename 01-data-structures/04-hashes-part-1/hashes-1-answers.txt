@@ -1,0 +1,3 @@
+Explain why doubling the size of the underlying array of your HashClass may be a poor idea:
+
+  Doubling the size of the array may be a poor idea because it creates unnecessarily large arrays.  In the example given, to only add 6 (key, value) pairs, the array has to be resized four times to 16 items! This takes up an unnesary amount of memory, causing for a slow operation.  There are also now 10 nil items in the array, which is an inefficient use of space, and slower to get through when searching for specific items.
