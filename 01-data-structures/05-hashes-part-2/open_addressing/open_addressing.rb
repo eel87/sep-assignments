@@ -1,68 +1,57 @@
 require_relative 'node'
 
 class OpenAddressing
+	attr_accessor :items
+
   def initialize(size)
     @items = Array.new(size)
   end
-  
-  def []=(key, value)
-    i = index(key, size)
-    if @items[i] == nil
+
+	def []=(key, value)
+		i = index(key, size)
+		if @items[i] == nil
 			@items[i] = Node.new(key, value)
 		elsif @items[i].key == key
 			@items[i].value = value
-		elsif next_open_index(i) != -1
-			index = next_open_index(i)
-			@items[index] = Node.new(key, value)
-		else
-			resize
-			i = index(key, size)
-			if next_open_index(i) != -1
-				index = next_open_index(i)
-				@items[index] = Node.new(key, value)
+		elsif @items[i] != nil && @items[i] != key
+			openIndex = next_open_index(i)
+			if openIndex != -1
+				@items[openIndex] = Node.new(key, value)
+			else
+				resize
+				i = index(key, size)
 			end
 		end
-  end
-  
-	# def []=(key, value)
- #   i = index(key, size)
- #   if @items[i] == nil
-	# 		@items[i] = Node.new(key, value)
-	# 	end
- #   while @items[i] != nil
- #   	if @items[i].key == key
-	# 			@items[i].value = value
-	# 		elsif next_open_index(i) != -1
-	# 			@items[next_open_index(i)] = Node.new(key, value)
-	# 		else
-	# 			resize
-	# 			i = index(key, size)
-	# 			@items[i] = Node.new(key, value)
-	# 		end
- #   end
-	# end
-	
-  def [](key)
-    i = index(key, size)
-		return @items[i].value
-  end
+	end
+
+	def [](key)
+	i = index(key, size)
+		if @items[i].key == key
+			return @items[i].value
+		else
+			@items.each_with_index do |item, index|
+				if item.key == key
+					return item.value
+				else
+					index += 1
+				end
+			end
+		end
+	end
 
   def index(key, size)
     index = key.sum % size
     return index
   end
- 
-  def next_open_index(index)
-    if @items[index] == nil
-      return index
-    end
-    while @items[index].next
-			if @items[index].next == nil
-			  return index
+
+	def next_open_index(index)
+		@items.each_with_index do |item, i|
+			if @items[i] == nil
+				return i
 			end
-    end
-    return -1
-  end
+		end
+		return -1
+	end
 
   def size
     return @items.count
@@ -77,7 +66,6 @@ class OpenAddressing
 			newIndex = index(item.key, size)
 			newItems[newIndex] = item
 		end
-	  @items = newItems
+	  @items.replace(newItems)
   end
-  
 end
