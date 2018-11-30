@@ -66,4 +66,25 @@ class LinkedList
     return temp
   end
   
+  def print_nodes
+    if !@head
+      return 'no nodes'
+    end
+    list = []
+    current_node = @head
+    while current_node.next
+      list << current_node
+      current_node = current_node.next
+    end
+    list << current_node
+    return list
+  end 
+  
+  def is_empty
+    if !@head
+      return true
+    end
+    false
+  end 
+  
 end
