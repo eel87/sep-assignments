@@ -70,9 +70,7 @@ class SeparateChaining
   	@items.each do |item|
   		next if item == nil
   		current_node = item.head
-  		puts current_node.key
   		newIndex = index(current_node.key, size)
-  		puts newIndex
   			if newItems[newIndex] != nil
   				newItems[newIndex].add_to_front(current_node)
   			else
