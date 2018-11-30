@@ -28,18 +28,34 @@ class HashClass
 	
 	def [](key)
 		i = index(key, size)
-		return @items[i].value
+		if @items[i].key == key
+			return @items[i].value
+		elsif @items[i] == nil
+			return nil
+		else
+			until @items[i].key == key
+				i =+ 1
+			end
+				return @items[i].value
+		end
 	end
 	
 	def resize
-		size = (@items.length*2)
-		newItems = Array.new(size)
+		newItems = Array.new(size*2)
 		
-		@items.each_with_index do |item, index|
-			next if item == nil
-			newIndex = index(item.key, size)
-			newItems[newIndex] = item
-		end
+		# @items.each_with_index do |linkedList, index|
+		# 	next if linkedList == nil 
+		# 	if linkedList.head
+		# 		current_node = linkedList.head
+		# 		newIndex = index(current_node.key, size)
+		# 		newItems[newIndex] = current_node
+		# 		while current_node.next
+		# 			current_node = current_node.next
+		# 			newIndex = index(current_node.key, size)
+		# 			newItems[newIndex] = linkedList.current_node
+		# 		end
+		# 	end
+		# end
 	  @items.replace(newItems)
 	end
 	
