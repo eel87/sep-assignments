@@ -16,7 +16,7 @@ def printHash
 					puts "Next node:\nkey = #{current_node.key},\nvalue = #{current_node.value}"
 				end
 			end
-			puts "Hash load factor = #{load_factor}"
+			puts "\nHash load factor = #{load_factor}"
 		end
 	end
 end
