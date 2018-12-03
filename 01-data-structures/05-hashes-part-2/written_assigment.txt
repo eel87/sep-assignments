@@ -1,0 +1,39 @@
+Describe three collision resolution strategies not mentioned here.
+    1. Double Hashing: 
+    
+    Double hashing is a technique used in the Open Addressed tables. It uses two hash functions to calculate a new index when a collision occurs.  The double hashing function would look like this:
+    
+    def hash1(key) = key & size
+    def hash2(key) = primeNumber - (key % primeNumber)
+    
+    def doubleHash = (hash1(key) + i*(hash2(key))
+    If the doubleHash function returns an index where another collision occurs, i (index) is increased by 1.
+    
+    
+    
+    2. Pseudo-Random Probing: 
+    
+    This technique uses an array of permutated numbers 0 to (arrayLength - 1) to see if the next "random" slot into which to insert the key is empty. For example, if a key is to be placed at index 1, but index 1 is already taken, then we would look at to our permutation array starting at index i.  The value at permutationArray[i] is added to the index taken (1) to find a new index.  The function looks like this: 
+    
+    permuationArray[i] + takenIndex = newIndex.  
+    
+    If the newIndex is taken, we increase i by 1, and repeat the operation to find another newIndex.  If this index is empty, we place the key there. If it is not empty, we continue through the probing process until no indices are available and resizing the array is necessary.
+    
+    
+    3. Bucket Hashing:
+    
+    This technique separates the Hash into buckets. Each bucket has a limited number of spaces in which to insert a key.  When a collision occurs, this technique creates an overflow array to hold keys whose index was already taken. When searching for a key, this technique will first find the bucket associated the key.  If it does not find that key within the bucket, it will search through the overflow array using linear probing.
+
+
+Create your own collision resolution strategy and describe how it works.
+
+    In my open addressed collision strategy, the index would be found using
+    key.sum % size.
+    
+    If the new index is not empty, I would multiply key.sum by the first prime number (2):
+    (key.sum)*2 % size.
+    
+    If the result is a new index that is not empty, I would multiply key.sum by the next prime number (3).
+    (key.sum)*3 % size.
+    
+    I would continue this process until the index returned is empty or is greater than the array length, in which case the array would be resized.
