@@ -1,0 +1,45 @@
+Binary Search Tree Output: 
+  The Matrix: 87
+  Star Wars: Return of the Jedi: 80
+  Star Wars: A New Hope: 93
+  Pacific Rim: 72
+  Inception: 86
+  The Martian: 92
+  Star Wars: The Empire Strikes Back: 94
+  Donnie Darko: 19
+  Braveheart: 78
+  The Shawshank Redemption: 91
+  Mad Max 2: The Road Warrior: 98
+  District 9: 90
+
+Binary Min Heap Output:
+  Pacific Rim, 72
+  Braveheart, 78
+  Star Wars: Return of the Jedi, 80
+  The Matrix, 87
+  District 9, 90
+  Donnie Darko, 19
+  Inception, 86
+  Star Wars: A New Hope, 93
+  The Shawshank Redemption, 91
+  The Martian, 92
+  Mad Max 2: The Road Warrior, 98
+  Star Wars: The Empire Strikes Back, 94
+  
+  
+  Benchmark output:
+  
+Binary Search Tree build tree:
+0.000000   0.000000   0.000000 (  0.000021)
+
+Binary Heap build heap:
+0.000000   0.000000   0.000000 (  0.000048)
+
+Binary Tree find node:
+0.000000   0.000000   0.000000 (  0.000023)
+
+Binary Heap find node:
+0.000000   0.000000   0.000000 (  0.000008)
+
+
+While it is faster to build a binary tree, it is much faster to navigate through a binary heap to find nodes. Since the binary heap is built using an array, it takes up less memory and it's constants are smaller than those of a Binary Search Tree.
