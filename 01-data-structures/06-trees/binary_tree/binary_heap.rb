@@ -80,3 +80,33 @@ class BinaryHeap
 end
 
 
+# root = Node.new("The Matrix", 87)
+# tree = BinaryHeap.new(root)
+
+# braveheart = Node.new("Braveheart", 78) 
+# jedi = Node.new("Star Wars: Return of the Jedi", 80) 
+# donnie = Node.new("Donnie Darko", 19) 
+# inception = Node.new("Inception", 86)
+# district = Node.new("District 9", 90) 
+# shawshank = Node.new("The Shawshank Redemption", 91) 
+# martian = Node.new("The Martian", 92) 
+# hope = Node.new("Star Wars: A New Hope", 93) 
+# empire = Node.new("Star Wars: The Empire Strikes Back", 94) 
+# mad_max_2 = Node.new("Mad Max 2: The Road Warrior", 98)
+# pacific_rim = Node.new("Pacific Rim", 72)
+
+
+# tree.insert( hope)
+# tree.insert( empire)
+# tree.insert( jedi)
+# tree.insert( martian)
+# tree.insert( pacific_rim)
+# tree.insert( inception)
+# tree.insert( braveheart)
+# tree.insert( shawshank)
+# tree.insert( district)
+# tree.insert( mad_max_2)
+# tree.insert(donnie)
+
+# tree.print
+
