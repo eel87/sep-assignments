@@ -1,29 +1,39 @@
 1. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
-- With linear search, it would take 7 iterations to find value G at index 6, since every item in the array must be visited (0 through 6 = 7 iterations)
+    - With linear search, it would take 7 iterations to find value G at index 6, since every item in the array must be visited (0 through 6 = 7 iterations)
 
 
 
 2. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
-- With Binary search, it would take 3 iterations to find value G.
+    - With Binary search, it would take 3 iterations to find value G.
 
 
 
 3. Calculate fib(10), fib(11), fib(12) by hand.
 
-fib = [0, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...]
-index  0  1  2  3  4  5  6  7   8   9  10  11  12
+    fib = [0, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...]
+    index  0  1  2  3  4  5  6  7   8   9  10  11  12
+    
+    fib(10) = fib[10-2] + fib[10-1]
+    fib(10) = fib[8] + fib[9]
+    fib(10) = 13 + 21
+    fib(10) = 34
+    
+    fib(11) = fib[11-2] + fib[11-1]
+    fib(11) = fib[9] + fib[10]
+    fib(11) = 21 + 34
+    fib(11) = 55
+    
+    fib(12) = fib[12-2] + fib[12-1]
+    fib(12) = fib[10] + fib[11]
+    fib(12) = 34 + 55
+    fib(12) = 89
 
-fib(10) = fib[10-2] + fib[10-1]
-fib(10) = fib[8] + fib[9]
-fib(10) = 13 + 21
-fib(10) = 34
+--------------------------------------------------------------------------------
 
-fib(11) = fib[11-2] + fib[11-1]
-fib(11) = fib[9] + fib[10]
-fib(11) = 21 + 34
-fib(11) = 55
+1. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+    - Since the collection is unsorted, I would use a linear iterative search. This way, the search would stop when the item is found.
+    Binary search will not work unless the collection is sorted.
 
-fib(12) = fib[12-2] + fib[12-1]
-fib(12) = fib[10] + fib[11]
-fib(12) = 34 + 55
-fib(12) = 89
+
+2. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+    - Since the collection is sorted, I would choose a binary search since this is faster. I would use a recursive solution, as the steps to find the new "high", "low", and "mid" items will continue until the item is found.
