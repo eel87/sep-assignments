@@ -1,0 +1,29 @@
+1. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+- With linear search, it would take 7 iterations to find value G at index 6, since every item in the array must be visited (0 through 6 = 7 iterations)
+
+
+
+2. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+- With Binary search, it would take 3 iterations to find value G.
+
+
+
+3. Calculate fib(10), fib(11), fib(12) by hand.
+
+fib = [0, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...]
+index  0  1  2  3  4  5  6  7   8   9  10  11  12
+
+fib(10) = fib[10-2] + fib[10-1]
+fib(10) = fib[8] + fib[9]
+fib(10) = 13 + 21
+fib(10) = 34
+
+fib(11) = fib[11-2] + fib[11-1]
+fib(11) = fib[9] + fib[10]
+fib(11) = 21 + 34
+fib(11) = 55
+
+fib(12) = fib[12-2] + fib[12-1]
+fib(12) = fib[10] + fib[11]
+fib(12) = 34 + 55
+fib(12) = 89
