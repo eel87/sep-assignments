@@ -1,0 +1,53 @@
+Using proper pseudo-code, describe three or more primitive algorithms used in your day-to-day life. Write your answers in a file called intro_algorithms_answers.txt. Here are some ideas:
+
+CALCULATING A TIP:
+
+GET receipt total including tax
+COMPUTE tip as: receipt total X .15
+COMPUTE total as: tip + receipt total
+RETURN total
+
+
+
+DETERMINING WHAT TO WEAR:
+
+CREATE new outfit array
+GET pants array
+GET shirts array
+GET shoes array
+  
+FOR pants
+  IF pant is black
+    ADD pant to outfit
+    break
+  END IF
+END
+
+FOR shirts
+  IF shirt is purple
+    ADD shirt to outfit
+    break
+  END IF
+END
+
+FOR shoes
+  IF pair is pink
+    ADD shoes to outfit
+    break
+  END IF
+END
+
+PRINT outfit
+
+
+
+GETTING TO WORK:
+
+SET Path Points to 0
+
+UNTIL Path points == 10
+  IF light is green
+    INCREMENT path point
+  ELSE
+    Do not move.
+END
