@@ -1,0 +1,5 @@
+Implement quick sort in Ruby.
+Research heap sort and implement it in Ruby.
+Research bucket sort and implement it in Ruby.
+Using Ruby's benchmark module, measure the time it takes for all of the sorting algorithms discussed in this checkpoint to sort a collection of fifty items. Use your output to create a bar chart.
+Looking at the bar chart, speculate on why you think some sort algorithms are faster than others and provide rationale as to your thought process.
