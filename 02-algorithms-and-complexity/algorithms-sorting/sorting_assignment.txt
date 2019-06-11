@@ -1,5 +1,44 @@
-Implement quick sort in Ruby.
-Research heap sort and implement it in Ruby.
-Research bucket sort and implement it in Ruby.
-Using Ruby's benchmark module, measure the time it takes for all of the sorting algorithms discussed in this checkpoint to sort a collection of fifty items. Use your output to create a bar chart.
-Looking at the bar chart, speculate on why you think some sort algorithms are faster than others and provide rationale as to your thought process.
+
+USING RUBY'S BENCHMARK MODULE, MEASURE THE TIME IT TAKES FOR ALL OF THE SORTING ALGORITHMS DISCUSSED IN THIS CHECKPOINT TO SORT A COLLECTION OF FIFTY ITEMS. USE YOUR OUTPUT TO CREATE A BAR CHART.
+
+Bar Chart: https://www.meta-chart.com/share/sorting-algorithms-run-times
+
+-------------------------------------------------------------------------------
+
+LOOKING AT THE BAR CHART, SPECULATE ON WHY YOU THINK SOME SORT ALGORITHMS ARE FASTER THAN OTHERS AND PROVIDE RATIONALE AS TO YOUR THOUGHT PROCESS.
+
+In a sampling of five random arrays (shown below), the Quick Sort method was always the fastest, followed by Heap Sort and, finally, Bucket Sort.
+Quick Sort is the fastest method becuase it runs (almost) without unnecessary swaps. Heap Sort and Bucket sort both require swapping every single element at one point or another, which is very time consuming.  (source: https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort)
+
+--------------------------------------------------------------------------------
+[28, 51, 173, 205, 104, 276, 50, 64, 177, 17, 76, 98, 205, 54, 238, 117, 6, 40, 157, 36, 281, 108, 83, 296, 200, 240, 103, 270, 262, 98, 55, 239, 8, 144, 100, 37, 153, 121, 129, 208, 216, 223, 40, 93, 127, 26, 29, 143, 253, 210]
+                user     system      total        real
+quick_sort:  0.000000   0.000000   0.000000 (  0.000048)*
+heap_sort:   0.000000   0.000000   0.000000 (  0.000061)**
+bucket_sort: 0.000000   0.000000   0.000000 (  0.000095)***
+
+
+[23, 300, 87, 225, 187, 154, 267, 98, 239, 31, 184, 207, 182, 98, 15, 274, 128, 223, 20, 26, 166, 227, 202, 14, 43, 295, 248, 297, 141, 204, 242, 148, 177, 212, 2, 111, 277, 298, 282, 108, 293, 4, 56, 27, 62, 211, 251, 120, 92, 164]
+                user     system      total        real
+quick_sort:  0.000000   0.000000   0.000000 (  0.000045)*
+heap_sort:   0.000000   0.000000   0.000000 (  0.000054)**
+bucket_sort: 0.000000   0.000000   0.000000 (  0.000060)***
+
+[6, 168, 14, 169, 222, 239, 184, 287, 56, 63, 151, 88, 98, 232, 105, 5, 295, 243, 250, 261, 177, 80, 248, 132, 3, 278, 288, 74, 263, 287, 290, 264, 198, 104, 285, 269, 222, 119, 10, 200, 122, 176, 266, 160, 215, 124, 40, 156, 109, 53]
+                user     system      total        real
+quick_sort:  0.000000   0.000000   0.000000 (  0.000063)*
+heap_sort:   0.000000   0.000000   0.000000 (  0.000092)**
+bucket_sort: 0.000000   0.000000   0.000000 (  0.000095)***
+
+[226, 289, 255, 241, 222, 115, 13, 153, 164, 40, 113, 244, 86, 140, 300, 174, 214, 136, 87, 127, 23, 84, 111, 252, 145, 299, 58, 10, 88, 35, 12, 169, 178, 273, 16, 118, 25, 297, 195, 83, 153, 78, 216, 257, 185, 131, 284, 136, 237, 55]
+                 user     system      total        real
+quick_sort:  0.000000   0.000000   0.000000 (  0.000043)*
+heap_sort:   0.000000   0.000000   0.000000 (  0.000054)**
+bucket_sort: 0.000000   0.000000   0.000000 (  0.000058)***
+
+[221, 37, 57, 189, 143, 264, 164, 230, 259, 190, 39, 77, 149, 86, 0, 205, 138, 244, 97, 64, 237, 86, 188, 77, 89, 269, 100, 164, 143, 6, 167, 193, 250, 98, 201, 293, 94, 288, 258, 232, 285, 80, 259, 202, 181, 196, 198, 11, 2, 284]
+                 user     system      total        real
+quick_sort:  0.000000   0.000000   0.000000 (  0.000042)*
+heap_sort:   0.000000   0.000000   0.000000 (  0.000053)**
+bucket_sort: 0.000000   0.000000   0.000000 (  0.000058)***
+

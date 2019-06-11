@@ -25,6 +25,5 @@ def create_max_heap(array, parent, limit)
 end
 
 
-collection = Array.new(15) { rand(0..300) }
-
-print heap_sort(collection)
+# collection = Array.new(15) { rand(0..300) }
+# print heap_sort(collection)
