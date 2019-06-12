@@ -1,0 +1,52 @@
+DESCRIBE AN ANALOGY FOR RELATING AN ALGORITHM THAT HAS EFFICIENCY O(1) AND ANOTHER ALGORITHM THAT HAS O(2^N):
+
+An algorithm that has O(1) is like running a marathon at constant speed along a flat surface, and an algorithm that has O(2^n) is like traveling a marathon distance trudging through waist-deep mud, going slower and slower the further one gets.
+
+O(1) is the notation for an algorithm that finishes in constant time no matter what the input of n, as n grows to infinity.  To me, this would be like running a marathon at a constant pace, with no changes in terrain to affect speed.  O(2^n) on the other hand, is an algorithm whose run time grows exponentially, as the input of n grows (running slower and slower as time goes on). Comparing the marathon runner on a level terrain, this algorithm could be represented by someone trudging through mud, the further they get, the slower and harder it is to continue.
+
+
+IN PLAIN ENGLISH, WHAT IS THE BEST CASE SCENARIO FOR BINARY SEARCH?
+  The best case scenario for a binary search is if the "mid" value of the first iteration of the search is the element we are trying to locate.  This would mean that only one iteration of the algorithm would be necessary to find the element.
+
+    
+IN PLAIN ENGLISH, WHAT IS THE WORST-CASE SCENARIO FOR BINARY SEARCH?
+  The worst case scenario for a binary search would be if the algorithm had to be iterated through until only one element was left, being the "high", "mid", and "low" values.
+
+
+IN PLAIN ENGLISH, WHAT IS THE BOUNDED-CASE SCENARIO FOR BINARY SEARCH?
+  The bounded case scenario for a binary search would be any case where the search took longer time (more iterations) than the best case scenario, but shorter time (fewer iterations) than the worse case scenario.
+
+
+CREATE A GRAPH USING THE DATA BELOW. HERE'S A CSV WITH THE VALUES YOU'LL NEED.
+  /sep-assignments/02-algorithms-and-complexity/complexity-intro/algorithms_complexity_intro_graph.png
+
+WHAT IS THE LIMIT OF THE FUNCTION ABOVE AS N APPROACHES INFINITY?
+  The limit is also infinity.
+
+WHAT IS THE BIG-O OF AN ALGORITHM THAT HAS THE DATA POINTS ABOVE?
+  O(2^n)
+
+WRITE A RUBY METHOD THAT TAKES A NUMBER N. 
+THIS METHOD MUST PRINT THE WORST-CASE NUMBER OF ITERATIONS FOR LINEAR SEARCH TO FIND AN ITEM IN COLLECTIONS OF SIZE ONE TO N. 
+USE IT TO GENERATE A TABLE OF WORST-CASE ITERATIONS OF COLLECTIONS UP TO SIZE 1.
+
+def linear(n)
+  print "\nLinear Search worst case number of iterations:\n"
+  (1..n).each do |number|
+    print "\nn = #{number} | iterations = #{number}"
+  end
+end
+
+
+CREATE A GRAPH FROM THE OUTPUT USING GOOGLE SHEETS OR OTHER GRAPHING SOFTWARE. ANALYZE THE GRAPH AND DENOTE ITS BIG-O SOMEWHERE ON THE GRAPH.
+  /sep-assignments/02-algorithms-and-complexity/complexity-intro/linear_search_worst_case.png
+
+
+WHAT IS THE BIG-O OF BINARY SEARCH?
+  O(log n)
+
+WHAT IS THE BIG-Ω OF BINARY SEARCH?
+  O(1)
+
+WHAT IS THE BIG-Ө OF BINARY SEARCH?
+  O(log n)  
