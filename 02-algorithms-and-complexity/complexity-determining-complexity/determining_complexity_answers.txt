@@ -4,13 +4,13 @@
 2. Big-O of this algorithm is O(n). As n grows, the number of operations grow at a constant rate.
 
 
-3. Big-O of this algorithm is O(3n).  As n grows, the number of operations grows at a constant rate of 3*n
+3. Big-O of this algorithm is O(3n).  As n grows, the number of operations grows at a constant rate of 3*n.
 
 
 4. Big-O of this algorithm is O(2^n) since there are 2 recursive calls in this algorithm.
 
 
-5. Big-O of this algorithm is O(n). As n grows, the number of operations grow at a constant rate
+5. Big-O of this algorithm is O(n). With a while loop that grows in operations at the same rate that n grows, the number of operations grow at a constant rate
 
 
-6. Big-O of this algorithm is O(n^2). The number of operations grows quadratically as n grows over time.
+6. Big-O of this algorithm is O(n^2). With both recursive calls and a loop, the number of operations grows quadratically as n grows over time.
