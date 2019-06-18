@@ -8,13 +8,15 @@ def poorly_written_ruby(*arrays)
       if val <= sorted_array[i]
         sorted_array.insert(i, val)
         break
-      elsif i == sorted_array.length - 1
+      else
         sorted_array << val
         break
       end
-     i+=1
+      i+=1
     end
   end
   
-  sorted_array
+  return sorted_array
 end
+
+print poorly_written_ruby([4,3,5],[9,0,7],[6,0,99,8])
