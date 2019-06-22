@@ -1,3 +1,7 @@
+
+# Unfortunately I don't have the samples of the code I worked on before submitting this code:
+
+
 def partition(collection, left_pointer, right_pointer, pivot)
 	while left_pointer <= right_pointer
 		while collection[left_pointer] < pivot

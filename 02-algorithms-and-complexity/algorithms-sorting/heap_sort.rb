@@ -1,3 +1,28 @@
+# I was originally working on implementing heapsort similar to how I did it in the trees section of data-structures:
+
+def heapsort(collection)
+	collection.each_with_index do |element, i|
+		leftChild = collection[2*i]
+		rightChild = collection[2*i + 1]
+		next if element == nil
+		if leftChild == nil && rightChild == nil
+			break
+		elsif element > leftChild && rightChild == nil
+			leftChild, element = element, leftChild
+		elsif element > leftChild && leftChild <= rightChild
+			leftChild, element = element, leftChild
+		elsif element > leftChild && element > rightChild && leftChild >= rightChild
+			element, rightChild = rightChild, element
+		elsif element < leftChild && rightChild == nil
+			break
+		elsif element < leftChild && element > rightChild
+			element, rightChild = rightChild, element
+		end
+	end
+	return collection
+end
+# When this was not working (I  had many versions of this code), I did a lot of googling and that's when I found this simple ruby method:
+
 def heap_sort(array)
 	n = array.length - 1
 	a = array
