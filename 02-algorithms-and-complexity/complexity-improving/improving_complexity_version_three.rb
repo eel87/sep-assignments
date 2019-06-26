@@ -1,35 +1,32 @@
-class HashSort
+class MyArray
 
-  def initialize
-    @hash = Hash.new
-  end
-  
-  def insert_multiple(*arrays)
-    @collection = *arrays.concat.flatten
-    @collection.each_with_index do |item, index|
-      @hash[index] = item
-    end
+  def initialize(*arrays)
+    @array = *arrays.concat.flatten
   end
   
   def sort
-    n = @collection.length - 1
+    n = @array.length - 1
       begin 
       swapped = false
         n.times do |index|
-          next if @hash[index] == nil
-          if @hash[index].to_i > @hash[index + 1].to_i
-            temp = @hash[index]
-            @hash[index] = @hash[index + 1]
-            @hash[index + 1] = temp
+          next if @array[index] == nil
+          if @array[index] > @array[index + 1]
+            temp = @array[index]
+            @array[index] = @array[index + 1]
+            @array[index + 1] = temp
             swapped = true
           end
         end
       end until not swapped
-    @hash.values
+   @array
   end
-
 end
 
-h = HashSort.new
-h.insert_multiple([0,9,8,7],[8,4,7,3],[2,8,1,4,9])
-print h.sort
+
+array1 = Array.new(3) { rand(0..300) }
+array2 = Array.new(3) { rand(0..300) }
+array3 = Array.new(3) { rand(0..300) }
+a = MyArray.new(array1, array2, array3)
+
+
+print a.sort
