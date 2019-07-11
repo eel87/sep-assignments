@@ -1,0 +1,9 @@
+Version one: O(n^2).  This method contains nested loops, causing performance time to increase with every added element to the problem.
+  Source: https://hackernoon.com/big-o-for-beginners-622a64760e2
+
+
+Version Two: log(n) (base 2).  Every time the recursive function is called, n is divided by 2.  
+  Source: https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation
+
+
+Version three: O(n).  With one loop, as n increases, the time it will take to execute the swap method increases. 
