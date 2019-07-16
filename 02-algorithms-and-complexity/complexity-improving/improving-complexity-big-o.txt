@@ -6,4 +6,9 @@ Version Two: log(n) (base 2).  Every time the recursive function is called, n is
   Source: https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation
 
 
-Version three: O(n).  With one loop, as n increases, the time it will take to execute the swap method increases. 
+Version three: O(n^2).  The method contains nested loops in the array's sort method.  O(n*n) = O(n^2)
+  Source: https://hackernoon.com/big-o-for-beginners-622a64760e2:
+
+  "A good rule of thumb is that if you see nested loops, then you use multiplication to work out the notation."
+  
+  
